@@ -1,0 +1,18 @@
+;
+; seg7_display.asm
+;
+; Created: 7/8/2023 11:57:43 AM
+; Author : nashdev255
+;
+
+; @param R18
+CARRYJUDGE:
+	CPI R18, 0b00011010
+	BREQ CARRYUP
+	CPI R18, 0b00111001
+	BREQ CARRYDOWN
+	RJMP JUDGE ; PINDの状態確認ラベル
+
+CARRYUP:
+
+CARRYDOWN:

@@ -1,0 +1,25 @@
+;
+; mash_fight.asm
+;
+; Created: 7/8/2023 11:40:41 AM
+; Author : nashdev255
+;
+
+.include "tn2313def.inc"
+.CSEG
+
+SETUP:
+	LDI R16, 0b11111111
+	OUT DDRB, R16
+	LDI R16, 0b11111100
+	OUT DDRD, R16
+
+RESET:
+	LDI R16, 0b00010000
+	OUT PORTB, R16
+
+JUDGE:
+	IN R16, PIND
+	ANDI R16, 0b00000001
+	BREQ HIT
+	RJMP JUDGE

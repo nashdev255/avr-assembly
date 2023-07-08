@@ -1,6 +1,3 @@
-.include "tn2313def.inc"
-.CSEG
-
 ; 20031004[Hz]
 T1S:
     LDI R23, 100
